@@ -25,3 +25,8 @@ class SignUpView(View):
       return redirect('index')
 
     return render(request, 'inventory/signup.html', {'form': form})
+
+class LogoutView(View):
+    def post(self, request):
+        logout(request)
+        return render(request, 'inventory/logout.html')
